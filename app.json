@@ -8,9 +8,9 @@
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "image": "./assets/images/dice-test-splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#14532d"
     },
     "ios": {
       "supportsTablet": true
