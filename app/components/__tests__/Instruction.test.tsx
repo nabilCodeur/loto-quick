@@ -1,4 +1,4 @@
-import Instruction from "@/components/Instruction";
+import Instruction from "@/app/components/Instruction";
 import { render, screen } from "@testing-library/react-native";
 import '@testing-library/react-native/extend-expect';
 

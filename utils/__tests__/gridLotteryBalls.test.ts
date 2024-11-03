@@ -1,7 +1,7 @@
 import * as Factory from "@/utils/checkBetween";
 import gridLotteryBalls from "../gridLotteryBalls";
 
-describe("gridLoterryBalls function", () => {
+describe(`${gridLotteryBalls.name} function`, () => {
 
   
     test("should calls checkBetween function", () => {

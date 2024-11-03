@@ -1,6 +1,6 @@
 import checkBetween from "../checkBetween";
 
-describe("checkBetween", () => {
+describe(`${checkBetween.name} function`, () => {
 
     test("should return error with wrong type parameter",() => {
         expect(()=>checkBetween(1,"10")).toThrow("les paramètres doivent être de type number")
