@@ -1,17 +1,21 @@
 import React from "react";
-import { View } from "react-native";
+import { ScrollView } from "react-native";
 import GridLotoMain from "./GridLotoMain";
 import GridLotoStar from "./GridLotoStar";
 import Instruction from "./Instruction";
 import GridLotoTitle from "./LotoSelectStarTitle";
+import DrawLotoResult from "./DrawLotoResult";
+import LotoActionsButtons from "./LotoActionsButtons";
 
 const Loto = () => {
-    return <View className="pt-2 pl-2 bg-green-900 flex-1" testID="loto">
+    return <ScrollView className="pt-2  bg-green-900 gap-y-4 flex-1 pb-4" testID="loto">
         <Instruction />
         <GridLotoMain/>
         <GridLotoTitle/>
-        <GridLotoStar/>
-    </View>
+        <GridLotoStar />
+        <LotoActionsButtons/>
+        <DrawLotoResult/>
+    </ScrollView>
 }
 
 export default Loto

@@ -8,9 +8,11 @@ import BallStarModel from "./BallStarModel";
 const GridLotoStar = () => {
     const gridLoteryBallsStar = gridLotteryBalls(VALUES.STAR_MIN, VALUES.STAR_MAX);
    
-    return <View className="flex flex-row w-full gap-2 flex-wrap p-2">
+    return <View className="flex flex-row w-full justify-center">
+        <View className="flex flex-row gap-2 flex-wrap px-2">
         {gridLoteryBallsStar.map(value =>
             <BallStarModel value={value} key={value} />)}
+            </View>
 </View>
 }
 

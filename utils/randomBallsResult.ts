@@ -6,8 +6,9 @@ const randomBallResult = (min: number, max: number, range: number, currentLotoRe
     checkBetween(min, max)
     const balls = new Set<number>(currentLotoResult)
     if (balls.size >= range) {
-        return currentLotoResult
+        balls.clear()
     }
+   
     while (balls.size < range) {
         balls.add(randomBetween(min, max))
     }

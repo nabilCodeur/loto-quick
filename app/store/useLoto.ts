@@ -1,7 +1,7 @@
 import * as LOTOVALUES from '@/constants/loto';
 import randomBallResult from '@/utils/randomBallsResult';
 import updateBallInputFromUser from '@/utils/updateBallFromUser';
-import { createStore } from "zustand";
+import { create } from "zustand";
 
 type BallsStore = {
     mainBalls: number[],
@@ -14,12 +14,13 @@ type BallsStore = {
     
 }
 
-const useStoreLotoBalls = createStore<BallsStore>((set, get) => ({
-    mainBalls: [],
+const useLoto = create<BallsStore>((set, get) => ({
+    mainBalls: [2],
     starBalls: [],
     resetAll: () => set((state) => ({ mainBalls: [], starBalls: [] })),
     updateMainBallFromUser: (inputUser) => set((state) => {
-        const updatedMainBalls = updateBallInputFromUser(inputUser, LOTOVALUES.STAR_RANGE, state.mainBalls)
+        const updatedMainBalls = updateBallInputFromUser
+            (inputUser, LOTOVALUES.MAIN_RANGE, state.mainBalls)
         return ({mainBalls:updatedMainBalls})
     }),
     updateStarBallFromUser: (inputUser) => set((state) => {
@@ -28,7 +29,7 @@ const useStoreLotoBalls = createStore<BallsStore>((set, get) => ({
     }),
     randomBallsMain: () => set(state => {
        
-        const updateMainBalls = randomBallResult(LOTOVALUES.MAIN_MIN, LOTOVALUES.MAIN_MAX, LOTOVALUES.STAR_MAX, state.mainBalls);
+        const updateMainBalls = randomBallResult(LOTOVALUES.MAIN_MIN, LOTOVALUES.MAIN_MAX, LOTOVALUES.MAIN_RANGE, state.mainBalls);
         return ({ mainBalls: updateMainBalls });
     }),
     randomStarMain: () => set(state => {
@@ -38,4 +39,4 @@ const useStoreLotoBalls = createStore<BallsStore>((set, get) => ({
 })
 );
 
-export default useStoreLotoBalls
+export default useLoto

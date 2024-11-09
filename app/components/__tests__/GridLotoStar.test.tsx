@@ -10,3 +10,4 @@ describe(`${GridLotoStar.name} component`, () => {
         }
     })
 });
+
