@@ -3,6 +3,7 @@ import randomBallResult from '@/utils/randomBallsResult';
 import updateBallInputFromUser from '@/utils/updateBallFromUser';
 import { create } from "zustand";
 
+
 type BallsStore = {
     mainBalls: number[],
     starBalls:number[],
